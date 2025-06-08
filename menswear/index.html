@@ -1,0 +1,43 @@
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a//dev/null b/menswear/index.html
+index 0000000000000000000000000000000000000000..08cf5a5e75470c64ad951fcd48e430047a85de52 100644
+--- a//dev/null
++++ b/menswear/index.html
+@@ -0,0 +1,34 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++  <meta charset="UTF-8">
++  <title>Men's Wear Shop</title>
++  <link rel="stylesheet" href="style.css">
++</head>
++<body>
++  <header>
++    <h1>Men's Wear Shop</h1>
++    <nav>
++      <a href="#products">Products</a>
++      <a href="#cart">Cart (<span id="cart-count">0</span>)</a>
++    </nav>
++  </header>
++  <main>
++    <section id="products">
++      <h2>Products</h2>
++      <div id="product-list" class="product-grid">
++        <!-- Products inserted by JS -->
++      </div>
++    </section>
++    <section id="cart">
++      <h2>Shopping Cart</h2>
++      <ul id="cart-items"></ul>
++      <p id="cart-total"></p>
++    </section>
++  </main>
++  <footer>
++    <p>&copy; 2023 Men's Wear Shop</p>
++  </footer>
++  <script src="script.js"></script>
++</body>
++</html>
+ 
+EOF
+)
